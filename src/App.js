@@ -1,5 +1,6 @@
  
-import {useState } from 'react';
+
+import React, {useState}  from 'react';
 
 
 function App() {
@@ -18,17 +19,17 @@ function App() {
    
   const buttonPressed = value =>{
     console.log('value');
-    if(op.includes(value) && calc === '' || op.includes(value)  && op.includes(calc.slice(-1)) ){
+    if((op.includes(value) && calc === '' || op.includes(value) ) && op.includes(calc.slice(-1)) ){
       return;
     } 
       setCalc(calc + value)
   }
   const clearPressed  = value => {
-    if(value === 0 && calc != ''){
+    if(value === 0 && calc !== ''){
     setCalc('')
     setResult('')
     }
-   else if(value === 1 && calc != ''){
+   else if(value === 1 && calc !== ''){
     const newvalue = calc.slice(0,-1)
     setCalc(newvalue)
     }
