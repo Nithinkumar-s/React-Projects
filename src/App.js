@@ -1,8 +1,7 @@
  
 
 import React, {useState}  from 'react';
-
-
+  
 function App() {
 
   const [calc,setCalc] =  useState('');
@@ -39,6 +38,18 @@ function App() {
     let result = parseFloat(eval(calc))
     setResult(Number(result));
   }
+  const [isShown, setIsShown] = useState(false);
+
+  // This function is called when the blue button gets clicked
+  const showToast = () => {
+    setIsShown(true);
+
+    // automatically hide the toast after 5 seconds
+    // your can set a shorter/longer time if you want
+    setTimeout(() => {
+      setIsShown(false);
+    }, 3000);
+  };
   
   
   return (
@@ -51,7 +62,7 @@ function App() {
             <div className="display">
                   <div className="numbers">
                     
-                  <button >❤</button>
+                  <button onClick={showToast}>❤</button>
                   <button onClick={() => clearPressed(0)}>CLEAR</button>
                   
                   <button onClick={() => clearPressed(1)}>DEL</button>
@@ -68,7 +79,11 @@ function App() {
                   </div>
 
             </div>
-      
+            {isShown && (
+          <div className='my-toast'>
+            <span>Maverick with ❤ </span>
+          </div>
+        )}
       
     </div>
   );

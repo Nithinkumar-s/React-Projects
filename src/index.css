@@ -29,8 +29,32 @@ height: auto;
 
   
 }
+.my-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 45%;
+  z-index: 9999;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background: rgb(238 238 238 / 6%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  color: #00fff36b;
+  font-size: 10px;
+  width: 90px;
+  height: 20px;
+  animation-name: example;
+  animation-duration: 4s;
+  justify-content: center;
+}
+@keyframes example {
+  from {bottm: 0px;}
+  to {bottom: 25%;}
+}
+
 .data{
-  background-color: rgb(44 171 196);
+  background-color: #1352d9;
   height: 6rem;
   display: flex;
   flex-direction: column;
@@ -106,6 +130,10 @@ button:hover {
   }
   button:hover {
     background-color: rgba(5, 4, 8, 0.17);  
+  }
+  .my-toast{
+    left: 35%;
+    
   }
   
   /* styles here will only apply when the screen width is less than 600px */
