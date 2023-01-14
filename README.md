@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hi this is a sample calculator project that i have done during learning react js
 
 ## Available Scripts
 
