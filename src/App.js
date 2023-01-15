@@ -35,8 +35,18 @@ function App() {
 
   }
   const resultValue = ()=>{
-    let result = parseFloat(eval(calc))
+    let character = calc.at(-1)
+    if(op.includes(character)){
+      let newCalc = calc.slice(0,-1);
+      let result = parseFloat(eval(newCalc))
+      setCalc(newCalc)
+      setResult(Number(result));
+    }
+    else{
+      let result = parseFloat(eval(calc))
     setResult(Number(result));
+    }
+   
   }
   const [isShown, setIsShown] = useState(false);
 
